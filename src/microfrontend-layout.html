@@ -1,35 +1,23 @@
-<template>
-  <single-spa-router>
-    <main>
-      <route default>
-        <div>
-          <div v-if="isRouteValidForApp('@Jansch/app1')">
-            <application name="@Jansch/app1"></application>
-          </div>
-          <div
-            v-if="isRouteValidForApp('@Jansch/searchbar')"
-          >
-            <application name="@Jansch/searchbar"></application>
-          </div>
-          <div></div>
+<single-spa-router>
+  <main>
+    <route default>
+      <div
+        style="
+          display: grid;
+          column-gap: 50px;
+          grid-template-columns: 30% auto;
+          background-color: #2196f3;
+          padding: 10px;
+        "
+      >
+        <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px">
+          <application name="@Jansch/app1"></application>
         </div>
-      </route>
-    </main>
-  </single-spa-router>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      checkURL: false,
-    };
-  },
-  methods: {
-    isRouteValidForApp(appName) {
-      // Deine Methode, um die Parameter in der URL zu überprüfen
-      // ...
-    },
-  },
-};
-</script>
+        <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px">
+          <application name="@Jansch/searchbar"></application>
+        </div>
+        <div></div>
+      </div>
+    </route>
+  </main>
+</single-spa-router>
